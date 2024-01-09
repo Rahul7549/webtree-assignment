@@ -3,6 +3,8 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.6.
 
 
+## please Do not reload the application because the new added or Updated task Task will be Undo as it's using memory storage
+
 # Application architecture
 - Application contain two module `Header` and `Task`
 - `Header` module has only `app-header-components` components
@@ -20,6 +22,8 @@ step 3: Run `npm install` to install the required package
 step 4: If `npm install` doesn't work, Run `npm install --f`
 step 5: If you have installed the package the run `npm start`
 step 5: Now open the `http://localhost:4200/` in your browser
+
+
 
 
 # Application Functions
