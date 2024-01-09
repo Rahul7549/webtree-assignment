@@ -3,7 +3,7 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.6.
 
 
-## please Do not reload the application because the new added or Updated task Task will be Undo as it's using memory storage
+## please Do not reload the application because the new added or Updated task Task will be Undo as it's using local memory storage
 
 # Application architecture
 - Application contain two module `Header` and `Task`
