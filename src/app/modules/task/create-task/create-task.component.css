@@ -1,0 +1,221 @@
+.create-task-main{
+    display: grid;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    /* padding-top: 25px; */
+    padding-bottom: 50px;
+    height: 100vh;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+.edit-task-popup-block{
+    width: 450px;
+    background-color: #FFFFFF;
+}
+
+.sign-up{
+    gap: 16px;
+    display: grid;
+    font-size: 16px;
+    line-height: 24px;
+    height: 28px;
+    
+}
+
+
+.Eternia-label-text{
+    padding-top: 12px;
+}
+
+.create-task-label{
+    display: grid;
+    justify-content: center;
+    font-size: 40px;
+    line-height: 60px;
+    height: 70px;
+}
+
+
+.login-sec{
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    box-sizing: border-box;
+    list-style: none;
+    font-family: 'National 2', 'Helvetica Neue', Helvetica, Arial, 'Hiragino Sans', 'Hiragino Kaku Gothic Pro', '游ゴシック', '游ゴシック体', YuGothic, 'Yu Gothic', 'ＭＳ ゴシック', 'MS Gothic', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    justify-content: end;
+    display: inline-flex;
+    gap: 10px;
+    padding-left: 32px;
+    padding-right: 32px 
+
+}
+
+.login-btn{
+    color: rgb(0, 127, 170);
+    border: none;
+    cursor: pointer;
+    margin: 0px;
+    outline: none;
+    padding: 0px;
+    font-size: inherit;
+    background: none;
+    box-sizing: border-box;
+    text-align: left;
+    font-family: "National 2", "Helvetica Neue", Helvetica, Arial, "Hiragino Sans", "Hiragino Kaku Gothic Pro", 游ゴシック, 游ゴシック体, YuGothic, "Yu Gothic", "ＭＳ ゴシック", "MS Gothic", sans-serif;
+    font-weight: inherit;
+    line-height: 1.5;
+    text-decoration: none;
+    -webkit-font-smoothing: antialiased;
+}
+
+.have-acc{
+    color: rgb(51, 62, 72);
+    margin: 0px;
+    padding: 0px;
+    font-size: 16px;
+    box-sizing: border-box;
+    text-align: left;
+    font-family: "National 2", "Helvetica Neue", Helvetica, Arial, "Hiragino Sans", "Hiragino Kaku Gothic Pro", 游ゴシック, 游ゴシック体, YuGothic, "Yu Gothic", "ＭＳ ゴシック", "MS Gothic", sans-serif;
+    font-weight: 400;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+.fields-label{
+    color: rgb(51, 62, 72);
+    display: inline-block;
+    font-size: 14px;
+    font-family: "National 2", "Helvetica Neue", Helvetica, Arial, "Hiragino Sans", "Hiragino Kaku Gothic Pro", 游ゴシック, 游ゴシック体, YuGothic, "Yu Gothic", "ＭＳ ゴシック", "MS Gothic", sans-serif;
+    font-weight: 550;
+    margin-bottom: 0px;
+}
+
+.task-field{
+    gap: 16px;
+    display: grid;
+    min-height: 500px;
+}
+
+#title,#description,#duesDate{
+    color: rgb(51, 62, 72);
+    width: 100%;
+    border: 1px solid rgb(208, 210, 211);
+    min-height: 48px;
+    margin: 0px;
+    outline: none;
+    padding: 0px 16px;
+    font-size: 16px;
+    box-shadow: none;
+    box-sizing: border-box;
+    list-style: none;
+    font-family: "National 2", "Helvetica Neue", Helvetica, Arial, "Hiragino Sans", "Hiragino Kaku Gothic Pro", 游ゴシック, 游ゴシック体, YuGothic, "Yu Gothic", "ＭＳ ゴシック", "MS Gothic", sans-serif;
+    line-height: 1.5;
+    border-radius: 4px;
+    background-color: rgb(255, 255, 255);
+    appearance: none;
+    -webkit-font-smoothing: antialiased;
+}
+
+
+
+
+
+.signup-next-btn{
+    color: rgb(255, 255, 255);
+    width: 100%;
+    border: 1px solid rgb(0, 191, 111);
+    cursor: pointer;
+    height: 48px;
+    display: flex;
+    padding: 0px 32px;
+    position: relative;
+    font-size: 16px;
+    box-shadow: none;
+    box-sizing: border-box;
+    transition: color 0.4s ease 0s, border-color 0.4s ease 0s, background-color 0.4s ease 0s, box-shadow 0.4s ease 0s;
+    align-items: center;
+    font-family: "National 2", "Helvetica Neue", Helvetica, Arial, "Hiragino Sans", "Hiragino Kaku Gothic Pro", 游ゴシック, 游ゴシック体, YuGothic, "Yu Gothic", "ＭＳ ゴシック", "MS Gothic", sans-serif;
+    font-weight: 500;
+    border-radius: 4px;
+    justify-content: center;
+    text-decoration: none;
+    background-color: rgb(0, 191, 111);
+    -webkit-font-smoothing: antialiased;
+}
+
+.hr-line{
+    border: none;
+    padding: 0;
+    border-bottom: 1px solid black;
+    position: relative;
+}
+.other-signup-option{
+    color: rgb(51, 62, 72);
+    margin: 0px;
+    padding: 0px;
+    font-size: 14px;
+    box-sizing: border-box;
+    text-align: left;
+    font-family: "National 2", "Helvetica Neue", Helvetica, Arial, "Hiragino Sans", "Hiragino Kaku Gothic Pro", 游ゴシック, 游ゴシック体, YuGothic, "Yu Gothic", "ＭＳ ゴシック", "MS Gothic", sans-serif;
+    font-weight: 400;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+.edit-task-container{
+    display: grid;
+    background-color: #FFFFFF;
+    height: auto;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    padding-left: 22px;
+    padding-right: 22px;
+    min-height: 500px;
+}
+
+
+.mat-mdc-form-field{
+    width: 100%;
+}
+
+.popup-footer-section{
+    display: flex;
+    width: 100%;
+    position: relative;
+    justify-content: space-between;
+    min-width: 60px;
+    padding-top: 15px;
+   
+  }
+  .btn{
+    width: 125px;
+    max-height: 40px;
+    height: 40px;
+    bottom: 0px;
+    position: absolute;
+  }
+
+
+
+  .show{
+    display: block;
+  }
+
+  #successModal{
+    position: absolute;
+  }
+
+  .task-field.hide{
+    display: none;
+  }
+
+  .after-success-view{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    text-align: center;
+  }

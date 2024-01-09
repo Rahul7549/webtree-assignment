@@ -1,0 +1,107 @@
+<div class="create-task-btn-section">
+  <button style="width: 250px;" type="button" class="btn btn-success btn-lg btn-block" (click)="createNewTask()" >Create New Task</button>
+</div>
+
+<div class="task-container">
+  <table>
+    <thead>
+      <tr style="background-color: #010067;">
+        <th style="width: 180px;">Serial No</th>
+        <th>Title</th>
+        <th>Due Date</th>
+        <th>Task Status</th>
+        <th>Action</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let service of taskList;let i=index;" [ngClass]="{'even-row': i % 2 === 0, 'odd-row': i % 2 !== 0}">
+        <td>{{i+1}}</td>
+        <td style="color: #7003EC; font-size: 18px;">{{service.title}}</td>
+        <td><a style="color: #1037f4;">{{service.duesDate | date: 'mediumDate' }}</a></td>
+        <td>
+          <span class="badge" *ngIf="service.status=='Completed'"
+            style="background-color: #007BFF;">{{service.status}}
+          </span> 
+          <span class="badge" *ngIf="service.status=='Dues'"
+            style="background-color: #FFC107; min-width: 75px;">{{service.status }}
+          </span>
+          <a class="mx-1" style="text-decoration: none; font-size: 15px;margin-left: 0px; margin-right: 10px;" (click)="changeStatus(service)" >Change Status</a>
+        </td>
+        <td>
+          <a class="mx-3" style="text-decoration: none; font-size: 18px;margin-left: 0px; margin-right: 10px;" (click)="editTaskDetails(service)" ><img class="mx-1" src="../../../../assets/imgs/edit-icon.png" alt="icon" height="25px" width="25px"></a>
+          <img (click)="openDeleteConfirmation(service)" class="mx-3" src="../../../../assets/imgs/delete-icon.png" height="25px" width="25px" alt="icon">
+        </td>
+        <td>
+          <span (click)="exploreTaskDetails(service)" class="badge explore-btn">View More <img src="../../../../assets/imgs/view-more-icon.png" height="20px"
+              width="25px" alt="Icon"></span>
+        </td>
+      </tr>
+
+
+    </tbody>
+  </table>
+
+</div>
+
+<div class="manage-status-block" *ngIf="openChangeStatusFlag">
+  <div class="popup-header-section">
+      <span class="header-title">
+          <h2 style="color: rgb(51, 62, 72);
+          font-size: 20px;
+          margin-top: 0px;
+          font-weight: 500;">
+          <b>
+              Task Status
+          </b>
+      </h2>
+      </span>
+      <span class="popup-close-btn" (click)="closeSidePoup()">
+          <img src="../../../../assets/imgs/close-icon.png" height="30px" width="30px" alt="close">
+      </span>
+  </div>
+  <div class="status-list-container">
+      <ul class="project-group">
+        <div>
+          <label class="radio-btn-section">
+            <input type="radio" name="options" value="Completed" [(ngModel)]="selectedStatus" >
+            Completed
+          </label>
+        </div>
+        <div>
+          <label class="radio-btn-section">
+            <input type="radio" name="options" value="Dues" [(ngModel)]="selectedStatus">
+            Dues
+          </label>
+        </div>
+      </ul>
+  </div>
+  <div class="popup-footer-section">
+    <button type="button" class="btn btn-secondary" (click)="closeSidePoup()" >Cancel</button>
+    <button type="button" class="btn btn-success" (click)="updateStatus()" >Apply</button>
+  </div>
+
+</div>
+
+<div class="modal" tabindex="-1" role="dialog" [ngClass]="isDeleteModalOpen ? 'show':'hide'">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Confirmation</h5>
+        <button type="button" class="close" (click)="closeDeleteConfirmation()">
+          <span>&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Are you sure you want to delete this item?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="closeDeleteConfirmation()">Cancel</button>
+        <button type="button" class="btn btn-danger" (click)="deleteItem()">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="maskDrawer" *ngIf="openMaskFlag"></div>

@@ -1,0 +1,117 @@
+<div class="create-task-main">
+    <div class="edit-task-popup-block">
+
+        <div class="edit-task-container">
+            <span class="create-task-label" *ngIf="successFlag">Create New Task</span>
+            <span class="create-task-label text-success" *ngIf="!successFlag">Task Created</span>
+
+            <span>
+
+                <form [formGroup]="newTaskForm" (ngSubmit)="submitNewTaskForm()">
+
+                    <div class="task-field" [ngClass]="successFlag?'':'hide'">
+                        <span class="title-section">
+                            <label class="fields-label" for="title">Title</label>
+                            <br />
+                            <input formControlName="title" id="title" width="100%" type="text">
+                            <small style="color: red;"
+                                *ngIf="newTaskForm.get('title')?.hasError('required')&&newTaskForm.get('title')?.touched">
+                                Title is required.
+                            </small>
+                            <small class="text-danger" *ngIf="newTaskForm.get('title')?.hasError('minlength')">Title
+                                must be at least
+                                5 characters long</small>
+
+                        </span>
+                        <span class="description-section">
+                            <label class="fields-label" for="description">Description</label>
+                            <br />
+                            <textarea formControlName="description" id="description" width="100%" rows="5"></textarea>
+                            <small class="text-danger" *ngIf="newTaskForm.get('description')?.hasError('minlength')">
+                                Description must be at least 10 characters long.
+                            </small>
+                            <small class="text-danger" *ngIf="newTaskForm.get('description')?.hasError('maxlength')">
+                                Description cannot exceed 200 characters
+                            </small>
+                            <small class="text-danger"
+                                *ngIf="newTaskForm.get('description')?.hasError('required')&&newTaskForm.get('description')?.touched">Description
+                                is required</small>
+                        </span>
+                        <span class="calender-sectopn">
+                            <label class="fields-label" for="duesDate" type="tel">Due date</label>
+                            <br />
+
+                            <mat-form-field>
+                                <input matInput [matDatepicker]="picker" formControlName="selectedDate"
+                                    placeholder="Choose a date">
+                                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                <mat-datepicker #picker></mat-datepicker>
+                            </mat-form-field>
+
+                            <small class="text-danger" style="position: relative;
+                                            top: -23px;"
+                                *ngIf="newTaskForm.get('selectedDate')?.hasError('dateBeforeToday')&&newTaskForm.get('selectedDate')?.touched">Date
+                                cannot be before today</small>
+
+                            <small style="color: red;" style="position: relative;
+                            top: -23px;"
+                                *ngIf="newTaskForm.get('selectedDate')?.hasError('required')&&newTaskForm.get('selectedDate')?.touched">
+                                Dues Date is required.
+                            </small>
+
+
+                        </span>
+                        <div class="popup-footer-section">
+                            <button style="left: 0px;" type="button" class="btn btn-secondary btn-sm"
+                                (click)="cancelEdit()">Cancel</button>
+                            <button style="right: 0px;" type="submit" class="btn btn-success btn-sm">Submit</button>
+                        </div>
+                    </div>
+                </form>
+
+                <div class="task-field " [ngClass]="successFlag?'hide':''">
+                    <span class="after-success-view">
+                        <br />
+                        <span *ngIf="createdTask!=undefined">
+                            <h3 style="margin: 0px;color: #7003EC">{{createdTask.title}}</h3>
+                            <span>Status: <span style="color: #1037f4;">{{createdTask.status}}</span> || Dues Date:
+                                <span style="color: #1037f4;"> {{createdTask.duesDate |
+                                    date:'mediumDate'}}</span></span>
+                            <br>
+                            <p>{{createdTask.description}}</p>
+                        </span>
+
+
+                    </span>
+
+                    <div class="popup-footer-section">
+                        <button style="left: 0px;" type="button" style="left: 0px;" class="btn btn-secondary btn-sm"
+                            (click)="cancelEdit()">Back</button>
+                        <button style="right: 0px;" type="button" style="right: 0px;" class="btn btn-success btn-sm"
+                            (click)="createNewtask()">Create Task</button>
+                    </div>
+                </div>
+
+            </span>
+
+
+
+        </div>
+    </div>
+
+</div>
+
+<div class="modal" #successModal id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+    <div class="modal-dialog ">
+      <div class="modal-content">
+        <div class="modal-header bg-success text-white">
+          <h5 class="modal-title" id="successModalLabel">Success!</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"
+            (click)="hideSuccessModal()"></button>
+        </div>
+        <div class="modal-body">
+          <p>Task has been created Successfully..</p>
+        </div>
+      </div>
+    </div>
+  </div>

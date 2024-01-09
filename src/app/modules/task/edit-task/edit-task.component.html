@@ -1,0 +1,116 @@
+<div class="edit-task-main">
+  <div class="edit-task-popup-block">
+
+    <div class="edit-task-container">
+      <span class="create-task-label" *ngIf="successFlag">Edit Task</span>
+      <span class="create-task-label text-success" *ngIf="!successFlag">Task Updated</span>
+
+      <span>
+
+        <form [formGroup]="editTaskForm" (ngSubmit)="submitEditTaskForm()">
+          <div class="task-field" [ngClass]="successFlag?'':'hide'">
+            <span class="title-section">
+              <label class="fields-label" for="title">Title</label>
+              <br />
+              <input formControlName="title" id="title" width="100%" type="text">
+              <small style="color: red;"
+                *ngIf="editTaskForm.get('title')?.hasError('required')&&editTaskForm.get('title')?.touched">
+                Title is required.
+              </small>
+              <small class="text-danger" *ngIf="editTaskForm.get('title')?.hasError('minlength')">Title must be at least
+                5 characters long</small>
+            </span>
+            <span class="description-section">
+              <label class="fields-label" for="description">Description</label>
+              <br />
+              <textarea formControlName="description" id="description" width="100%" rows="5"></textarea>
+              <small style="color: red;"
+                *ngIf="editTaskForm.get('description')?.hasError('required')&&editTaskForm.get('description')?.touched">
+                description is required.
+              </small>
+              <small class="text-danger" *ngIf="editTaskForm.get('description')?.hasError('minlength')">
+                Description must be at least 10 characters long.
+              </small>
+              <small class="text-danger" *ngIf="editTaskForm.get('description')?.hasError('maxlength')">
+                Description cannot exceed 200 characters
+              </small>
+            </span>
+            <span class="calender-sectopn">
+              <label class="fields-label" for="duesDate" type="tel">Due date</label>
+              <br />
+
+              <mat-form-field>
+                <input matInput [matDatepicker]="picker" formControlName="selectedDate" placeholder="Choose a date">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+                
+              </mat-form-field>
+
+              <small class="text-danger" *ngIf="editTaskForm.get('selectedDate')?.hasError('required')">Date is
+                required</small>
+              <small class="text-danger" style="position: relative;
+                            top: -23px;" *ngIf="editTaskForm.get('selectedDate')?.hasError('dateBeforeToday')">Date
+                cannot be before today</small>
+
+              <small style="color: red;"
+                *ngIf="editTaskForm.get('selectedDate')?.hasError('required')&&editTaskForm.get('duesDate')?.touched">
+                Dues Date is required.
+              </small>
+              
+
+            </span>
+            <div class="popup-footer-section">
+              <button type="button" style="left: 0px;" class="btn btn-secondary btn-sm"
+                (click)="cancelEdit()">Back</button>
+              <button type="button" style="right: 0px;" class="btn btn-success btn-sm"
+                (click)="submitEditTaskForm()">save</button>
+            </div>
+          </div>
+
+          <div class="task-field " [ngClass]="successFlag?'hide':''">
+            <span class="after-success-view" *ngIf="taskToBeUpdated!=undefined">
+              <br />
+              <span>
+                <h3 style="margin: 0px;color: #7003EC">{{taskToBeUpdated.title}}</h3>
+                <span>Status: <span style="color: #1037f4;">{{taskToBeUpdated.status}}</span> || Dues Date: <span
+                    style="color: #1037f4;"> {{taskToBeUpdated.duesDate | date:'mediumDate'}}</span></span>
+                <br>
+                <p>{{taskToBeUpdated.description}}</p>
+              </span>
+
+
+            </span>
+
+            <div class="popup-footer-section">
+              <button type="button" style="left: 0px;" class="btn btn-secondary btn-sm"
+                (click)="cancelEdit()">Back</button>
+              <button type="button" style="right: 0px;" class="btn btn-success btn-sm" (click)="editAgain()">Edit
+                Again</button>
+            </div>
+          </div>
+        </form>
+      </span>
+
+
+
+    </div>
+  </div>
+
+</div>
+
+
+
+<div class="modal" #successModal id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+  <div class="modal-dialog ">
+    <div class="modal-content">
+      <div class="modal-header bg-success text-white">
+        <h5 class="modal-title" id="successModalLabel">Success!</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"
+          (click)="hideSuccessModal()"></button>
+      </div>
+      <div class="modal-body">
+        <p>Task has been updated Successfully..</p>
+      </div>
+    </div>
+  </div>
+</div>

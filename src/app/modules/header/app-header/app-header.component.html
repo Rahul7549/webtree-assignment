@@ -1,0 +1,66 @@
+
+<div class="navbar-main">
+    <div class="navbar-options-section">
+
+        <span class="hamburger-section" (click)="toggleSideMenu()">
+            <img src="../../../../assets/imgs/hamburger.png" height="33px" width="33px" *ngIf="!openSideMenuFlag" >
+            <img src="../../../../assets/imgs/close-icon.png" height="33px" width="33px" *ngIf="openSideMenuFlag">
+        </span>
+
+        <span class="eternia-logi-Icon">
+            <!-- <img src="assets/imgs/eternia-logo.png" height="20px" alt=""> -->
+        </span>
+        <div class="nav-container">
+ 
+            <nav class="left-nav-options" style="margin-left: 16px;"> 
+                <ul class="left-nav-option-group">
+                    <li>
+                        <a href="/" class="nav-home-btn">Webtree</a>
+                    </li>
+                    <li>
+                        <a style="font-size: 17px;" href="/" class="nav-home-btn active-nav-btn">Task</a>
+                    </li>
+                    
+                </ul>
+            </nav>
+    
+        </div>
+        
+    </div>
+</div>
+
+
+<div class="side-menue-section" [ngClass]="openSideMenuFlag?'show':'hide'">
+    <div class="sidemenue-bloc">
+        <ul class="nav-left-option-section">
+            <li style="cursor: pointer;
+            border-left: 8px solid transparent;
+            border-bottom: 1px solid rgb(208, 210, 211);">
+                <a class="menue-left-option">
+                    <span class="menu-option-label" (click)="toggleSideMenu()" > <b>Webtree</b></span>
+                </a>
+            </li>
+            <li style="cursor: pointer;
+            border-left: 8px solid transparent;
+            border-bottom: 1px solid rgb(208, 210, 211);">
+                <a class="menue-left-option">
+                    <span class="menu-option-label" (click)="toggleSideMenu()" > <b>Task</b></span>
+                </a>
+            </li>
+            
+
+           
+        </ul>
+
+        
+        
+        
+        
+        
+       
+
+    </div>
+</div>
+
+
+<h1 class="text-danger">helll</h1>

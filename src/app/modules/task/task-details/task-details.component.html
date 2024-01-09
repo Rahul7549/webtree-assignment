@@ -1,0 +1,23 @@
+<div class="service-explore-main">
+
+    <div class="container" *ngIf="selectedTask!=undefined">
+        <div class="title" style="margin: 0px;color: #7003EC">
+            <h1  >{{selectedTask.title}}</h1>
+        </div>
+        <span>Status: <span style="color: #1037f4;">{{selectedTask.status}}</span> || 
+        Dues date: <span style="color: #1037f4;">{{selectedTask.duesDate | date:'mediumDate'}}</span>
+        </span>
+        <br>
+        <span  class="service-description">{{selectedTask.description}}</span>
+        <div class="Subcribe-block">
+            <span (click)="goBack()" class="Subcribe-btn">
+                Back
+            </span>
+        </div>
+
+    </div>
+</div>
+
+<app-error-alert ></app-error-alert>
+
+<app-success-alert></app-success-alert>
