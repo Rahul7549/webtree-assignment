@@ -17,10 +17,15 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## PLease follow the bellow Steps to run this project locally.
 step 1: Clone the project from github repository 
+
 step 2: Open the terminal in project root directory
+
 step 3: Run `npm install` to install the required package
-step 4: If `npm install` doesn't work, Run `npm install --f`
+
+step 4: If `npm install` doesn't work, Run `npm install -f`
+
 step 5: If you have installed the package the run `npm start`
+
 step 5: Now open the `http://localhost:4200/` in your browser
 
 

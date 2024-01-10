@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ErrorAlertComponent } from './error-alert/error-alert.component';
-import { SuccessAlertComponent } from './success-alert/success-alert.component';
+import { ErrorAlertComponent } from './components/error-alert/error-alert.component';
+import { SuccessAlertComponent } from './components/success-alert/success-alert.component';
 
 
 

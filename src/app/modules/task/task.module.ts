@@ -1,9 +1,9 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { EditTaskComponent } from './edit-task/edit-task.component';
-import { TaskListComponent } from './task-list/task-list.component';
-import { CreateTaskComponent } from './create-task/create-task.component';
-import { TaskDetailsComponent } from './task-details/task-details.component';
+import { EditTaskComponent } from './components/edit-task/edit-task.component';
+import { TaskListComponent } from './components/task-list/task-list.component';
+import { CreateTaskComponent } from './components/create-task/create-task.component';
+import { TaskDetailsComponent } from './components/task-details/task-details.component';
 import { FormsModule } from '@angular/forms';
 import { CommonCustomModule } from '../common/common.module';
 import { ReactiveFormsModule } from '@angular/forms';

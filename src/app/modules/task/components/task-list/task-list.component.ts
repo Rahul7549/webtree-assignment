@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { TaskServiceService } from '../service/task-service.service';
+import {TaskServiceService} from '../../service/task-service.service'
 import { DatePipe } from '@angular/common';
 
 

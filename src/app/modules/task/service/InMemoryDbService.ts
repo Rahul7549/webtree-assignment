@@ -7,14 +7,14 @@ export class MockDataService implements InMemoryDbService {
         id: 1,
         title:'Angular Assignment',
         status:'Dues',
-        duesDate:'12 Jan 2024',
+        duesDate:'16 Jan 2024',
         description:'This assignment is for first round'
       },
       { 
         id: 2,
         title:'Reactjs Assignment',
         status:'Dues',
-        duesDate:'12 Jan 2024',
+        duesDate:'22 Jan 2024',
         description:'This assignment is for second round'
 
       },
@@ -22,7 +22,7 @@ export class MockDataService implements InMemoryDbService {
         id: 3,
         title:'Express Assignment',
         status:'Dues',
-        duesDate:'12 Jan 2024',
+        duesDate:'27 Jan 2024',
         description:'This assignment is for final round'
 
       },

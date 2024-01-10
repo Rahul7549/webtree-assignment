@@ -1,9 +1,10 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { TaskServiceService } from '../service/task-service.service';
+import {TaskServiceService} from '../../service/task-service.service'
 import { titleValidator,descriptionValidator,
-  dateNotBeforeTodayValidator } from '../../common/validator/validator';
+  dateNotBeforeTodayValidator } from '../../../common/validator/validator';
+
 
 
 @Component({

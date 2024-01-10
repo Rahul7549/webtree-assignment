@@ -1,7 +1,8 @@
 import { DatePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { TaskServiceService } from '../service/task-service.service';
+// import { TaskServiceService } from '../service/task-service.service';
+import {TaskServiceService} from '../../service/task-service.service'
 
 @Component({
   selector: 'app-task-details',

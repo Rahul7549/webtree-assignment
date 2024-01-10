@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { TaskListComponent } from './modules/task/task-list/task-list.component';
-import { TaskDetailsComponent } from './modules/task/task-details/task-details.component';
-import { CreateTaskComponent } from './modules/task/create-task/create-task.component';
-import { EditTaskComponent } from './modules/task/edit-task/edit-task.component';
+import { TaskListComponent } from './modules/task/components/task-list/task-list.component';
+import { TaskDetailsComponent } from './modules/task/components/task-details/task-details.component';
+import { CreateTaskComponent } from './modules/task/components/create-task/create-task.component';
+import { EditTaskComponent } from './modules/task/components/edit-task/edit-task.component';
 
 const routes: Routes = [
   {path:'',component:TaskListComponent},
